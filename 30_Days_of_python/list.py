@@ -33,9 +33,39 @@ find = 'IT' in companies
 print(find)
 
 
-sortedlist = sorted(companies, reverse=True)
-print(sortedlist)
+# sortedlist = sorted(companies, reverse=True)
+# print(sortedlist)
+# print(companies)
+
+# slice1 = companies[3:8]
+# print(slice1)
+
+# del companies[5:8]
+# print(companies)
+
+result = len(companies)
+
+r3 = result // 2
+
+del companies[r3]
 print(companies)
 
-slice1 = companies[3:8]
-print(slice1)
+del companies[0]
+print(companies)
+
+del companies[6]
+del companies[2]
+
+print(companies)
+
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node','Express', 'MongoDB']
+
+joined = front_end + back_end
+print(joined)
+
+fullstack = joined.copy()
+fullstack.insert(5, 'Python')
+fullstack.insert(6, 'SQL')
+
+print(fullstack)
