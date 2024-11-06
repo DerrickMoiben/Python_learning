@@ -1,3 +1,6 @@
+
+#List: is a collection which is ordered and changeable(modifiable). Allows duplicate members.
+
 l = [1, 2, 3, 4, 5]
 
 print(len(l))
@@ -69,3 +72,27 @@ fullstack.insert(5, 'Python')
 fullstack.insert(6, 'SQL')
 
 print(fullstack)
+
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+sortedages = sorted(ages)
+print(sortedages)
+min = sortedages[0]
+max = sortedages[-1]
+
+print(min, max)
+sortedages.append(19)
+sortedages.append(26)
+print(sortedages)
+
+median = len(sortedages)
+
+result = median // 2
+print(sortedages[result])
+
+j = 0
+for i in sortedages:
+    j += i
+
+avarage = j / median
+print(avarage)
