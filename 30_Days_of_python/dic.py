@@ -19,17 +19,27 @@ student = {
     }
     }
 
-print(len(student))
-print(student['skills'])
-print(type(student['skills']))
+# print(len(student))
+# print(student['skills'])
+# print(type(student['skills']))
 
-student['skills'].append('css')
+# student['skills'].append('css')
 
-print(student['skills'])
+# print(student['skills'])
 
-keys = student.keys()
+# keys = student.keys()
 
-print(keys)
+# print(keys)
 
-values = student.values()
-print(values)
+# values = student.values()
+# print(values)
+
+# print(student.items())
+
+student.pop('first_name')
+
+print(student)
+
+del dog
+
+print(dog)
