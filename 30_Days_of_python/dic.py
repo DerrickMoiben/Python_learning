@@ -30,3 +30,6 @@ print(student['skills'])
 keys = student.keys()
 
 print(keys)
+
+values = student.values()
+print(values)
