@@ -22,3 +22,11 @@ student = {
 print(len(student))
 print(student['skills'])
 print(type(student['skills']))
+
+student['skills'].append('css')
+
+print(student['skills'])
+
+keys = student.keys()
+
+print(keys)
