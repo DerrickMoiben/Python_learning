@@ -18,3 +18,7 @@ student = {
         'zipcode': 34647
     }
     }
+
+print(len(student))
+print(student['skills'])
+print(type(student['skills']))
