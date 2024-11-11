@@ -48,3 +48,8 @@ print(B)
 A.symmetric_difference(B)
 print(A)
 
+del A
+print(A)
+
+del B
+print(B)
