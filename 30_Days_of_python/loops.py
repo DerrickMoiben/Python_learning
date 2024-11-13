@@ -83,8 +83,13 @@ for i in range(0, 101):
 print('The sum of all numbers is', sum)
 print(f'The sum of even numbers is {even}, while the sum of odd numbers is {odd}')
 
-from . import countries
+# from . import countries
 
-for i in countries:
-    j = 'land' in i
-    print(j)
+# for i in countries:
+#     j = 'land' in i
+#     print(j)
+
+
+lst = ['banana', 'orange', 'mango', 'lemon']
+for item in reversed(lst):
+    print(item)
