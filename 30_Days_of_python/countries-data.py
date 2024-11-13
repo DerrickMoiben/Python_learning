@@ -1,5 +1,5 @@
 
-[
+data = [
     {
         "name": "Afghanistan",
         "capital": "Kabul",
@@ -2619,3 +2619,7 @@
         "currency": "Botswana pula"
     }
 ]
+
+
+for key in data:
+    print(key)
