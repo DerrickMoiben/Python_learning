@@ -96,3 +96,10 @@ b = 6
 
 print(f'{a} + {b} = {a+b}')
 print(f'{a} - {b} = {a-b}')
+
+
+
+
+companies = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" 
+
+print(companies.split(','))
