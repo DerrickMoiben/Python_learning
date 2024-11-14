@@ -40,3 +40,21 @@ def add_two_numbers(a, b):
     sum = a + b
     return sum
 print(add_two_numbers(5, 10))
+
+
+import math
+def area(r):
+    circle = math.pi * r * r
+    return circle
+
+print(area(16))
+
+def add(*args):
+    sum = 0
+    for num in args:
+        sum += num
+
+    return sum
+
+addition = add(5, 6, 7, 7, 6, 10)
+print(addition)
