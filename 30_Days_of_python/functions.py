@@ -58,3 +58,61 @@ def add(*args):
 
 addition = add(5, 6, 7, 7, 6, 10)
 print(addition)
+
+
+# def check_season(month):
+#     if month in ['December', 'January', 'February']:
+#         return 'Winter'
+#     elif month in ['March', 'April', 'May']:
+#         return 'Spring'
+#     elif month in ['June']:
+#         return 'Summer'
+#     elif month in ['September', 'October', 'November']:
+#         return "Autum"
+#     else:
+#         return 'Invalid Month'
+
+# month = input('Enter the month ')
+# season = check_season(month)
+# print(f'The season for {month} is {season}')
+
+
+# def reverse_list(lst):
+#     lst.reverse()
+#     for item in lst:
+#         print((item))
+
+# print(reverse_list([1, 2, 3, 4, 5]))
+# [5, 4, 3, 2, 1]
+# print(reverse_list1(["A", "B", "C"]))
+# # ["C", "B", "A"]
+
+
+# def reverse(lsr):
+#     reverse_lst = []
+#     for item in lsr:
+#         reverse_lst.insert(1, item)
+#     return reverse_lst
+
+# lsr = [1, 2, 5, 6]
+# print(reverse(lsr))
+
+
+def reverse_list(lst):
+    lst.reverse()
+    lstreverse= []
+    for item in lst:
+        lstreverse.append(item)
+    return lstreverse
+
+print(reverse_list([1, 2, 3, 4, 5]))
+
+
+
+def upper(lst):
+    upadated = []
+    for item in lst:
+        str(lst.upper())
+        upadated.append(item)
+
+upper(['kim'])
