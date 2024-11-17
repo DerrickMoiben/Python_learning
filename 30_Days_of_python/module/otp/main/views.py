@@ -26,6 +26,7 @@ def signup(request):
         form = signupForm(request.POST)
         if form.is_valid():
             form.save()
+            email = form.cleaned_data.get('email')
             return redirect('home')
     else:
         form = signupForm()
@@ -40,4 +41,6 @@ def all_users(request):
 def delete_user(request, pk):
     user = Signup.objects.get(id=pk)
     user.delete()
-    return redirect('all_users')     
+    return redirect('all_users')
+
+
