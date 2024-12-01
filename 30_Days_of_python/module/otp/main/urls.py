@@ -8,6 +8,5 @@ urlpatterns = [
     path('all_users/', views.all_users, name='all_users'),
     path('delete_user/<int:pk>/', views.delete_user, name='delete_user'),
     path('verifyotp/', views.verifyotp, name='verifyotp'),
-    # path('send_otp/', views.send_otp, name='send_otp'),
-    # path('verify_otp/', views.verify_otp, name='verify_otp'),
+    path('verifyotp/', views.verifyotp, name='verifyotp'),    
 ]

@@ -132,3 +132,13 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'derrickmoio92@gmail.com'  # Replace with your email
 EMAIL_HOST_PASSWORD = 'bbvz xddp gdus cvht'  # Replace with your email password
 
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Update with your Redis server details
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}

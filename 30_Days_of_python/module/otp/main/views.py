@@ -4,21 +4,24 @@ import string
 from .forms import signupForm
 from .models import Signup
 from django.core.mail import send_mail
+
+from django.core.cache import cache
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
 
-def otp_generate():
+def otp_generate(email):
     randomstr = ""
     for i in range(1, 4):
         digits = randint(0, 7)
         alphanumeric = choice(string.ascii_letters)
         randomstr += str(digits) + alphanumeric
+        
+    cache.set(f'otp:{email}', randomstr, timeout=60)
 
     return randomstr
 
-otp = otp_generate()
 
 
 def signup(request):
@@ -27,6 +30,10 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             email = form.cleaned_data.get('email')
+            
+            otp = otp_generate(email)
+            
+            request.session['email'] = email    # Save email in session
 
             # send email
             subject = 'Email Verification'
@@ -57,6 +64,8 @@ def signup(request):
     context = {'form': form}
     return render(request, 'signup.html', context)
 
+
+
 def all_users(request):
     users = Signup.objects.all()
     context = {'users': users}
@@ -67,17 +76,22 @@ def delete_user(request, pk):
     user.delete()
     return redirect('all_users')
 
-
 from django.contrib import messages
 
 def verifyotp(request):
+    email =  request.session.get('email')
+    
+    if not email:
+        messages.error(request, 'Please enter your email first')
+        return redirect('signup')
+    
     if request.method == 'POST':
-        otp_entered = request.POST['otp']
-        if otp_entered == otp:
+        otp = request.POST.get('otp')
+        cache_otp = cache.get(f'otp:{email}')
+        if otp == cache_otp:
+            messages.success(request, 'OTP verified successfully')
             return redirect('home')
         else:
-            messages.error(request, 'Enter the correct OTP') 
-            return redirect('verify_otp')
+            messages.error(request, 'Invalid OTP')
+            return redirect('verifyotp')
     return render(request, 'verify_otp.html')
-
-
