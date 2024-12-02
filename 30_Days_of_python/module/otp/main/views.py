@@ -18,7 +18,7 @@ def otp_generate(email):
         alphanumeric = choice(string.ascii_letters)
         randomstr += str(digits) + alphanumeric
         
-    cache.set(f'otp:{email}', randomstr, timeout=60)
+    cache.set(f'otp:{email}', randomstr, timeout=120)
 
     return randomstr
 
