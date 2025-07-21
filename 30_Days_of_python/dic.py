@@ -40,6 +40,5 @@ student.pop('first_name')
 
 print(student)
 
-del dog
 
 print(dog)
